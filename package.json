@@ -1,0 +1,24 @@
+{
+  "name": "@unit214/awork-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unit214/awork-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unit214/awork-api/issues"
+  },
+  "homepage": "https://github.com/unit214/awork-api#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "date-fns": "^2.29.1",
+    "dotenv": "^16.0.1"
+  }
+}
