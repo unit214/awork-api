@@ -86,6 +86,7 @@ module.exports = {
   getClients,
   getProjectsForClient,
   getHoursByProjectForMonthAndYear,
+  getHoursByProjectForStartDateAndEndDate,
   getProject,
   getClient,
   getYear,
