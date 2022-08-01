@@ -59,7 +59,11 @@ async function getHoursByProjectForMonthAndYear(project, month, year) {
   const baseDate = new Date(year, month, 1)
   const startDate = startOfMonth(baseDate)
   const endDate = endOfMonth(baseDate)
-  return iterateAPI(`/timeentries?filterby=startDateUtc ge datetime'${formatDate(startDate)}' and startDateUtc lt datetime'${formatDate(endDate)}' and (projectId eq guid'${project}') and (isBillable eq true and isBilled eq false)&`)
+  return getHoursByProjectForStartDateAndEndDate(startDate, endDate)
+}
+
+async function getHoursByProjectForStartDateAndEndDate(project, startDate, endDate) {
+  return iterateAPI(`/timeentries?filterby=startDateUtc ge datetime'${formatDate(startDate)}' and startDateUtc le datetime'${formatDate(endDate)}' and (projectId eq guid'${project}') and (isBillable eq true and isBilled eq false)&`)
 }
 
 async function getHoursByProject(project) {
@@ -82,6 +86,7 @@ module.exports = {
   getClients,
   getProjectsForClient,
   getHoursByProjectForMonthAndYear,
+  getHoursByProjectForStartDateAndEndDate,
   getProject,
   getClient,
   getYear,
