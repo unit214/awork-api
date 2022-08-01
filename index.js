@@ -59,7 +59,7 @@ async function getHoursByProjectForMonthAndYear(project, month, year) {
   const baseDate = new Date(year, month, 1)
   const startDate = startOfMonth(baseDate)
   const endDate = endOfMonth(baseDate)
-  return getHoursByProjectForStartDateAndEndDate(startDate, endDate)
+  return getHoursByProjectForStartDateAndEndDate(project, startDate, endDate)
 }
 
 async function getHoursByProjectForStartDateAndEndDate(project, startDate, endDate) {
