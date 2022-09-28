@@ -82,6 +82,16 @@ async function getTask(id) {
   return client.get(`/tasks/${id}`).then(response => response.data);
 }
 
+async function updateCustomClientContactInfo(clientId, contactInfoId, label, value) {
+  return client.put(`/companies/${clientId}/contactinfo/${contactInfoId}`, {
+    value: String(value),
+    label,
+    type: 'custom',
+    subType: 'custom',
+    isAddress: false,
+  }).then(response => response.data);
+}
+
 module.exports = {
   getClients,
   getProjectsForClient,
@@ -92,4 +102,5 @@ module.exports = {
   getYear,
   getUser,
   getTask,
+  updateCustomClientContactInfo
 }
