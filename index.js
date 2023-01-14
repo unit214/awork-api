@@ -74,6 +74,10 @@ async function getYear() {
   return iterateAPI('/timeentries?orderby=startDateLocal desc,startTimeLocal desc&filterby=startDateUtc ge datetime\'2022-01-01T00:00:00\' and startDateUtc lt datetime\'2022-12-31T23:59:59\'&grouping=user&', 1000)
 }
 
+async function getAllTrackings() {
+  return iterateAPI('/timeentries?orderby=startDateLocal desc,startTimeLocal desc&grouping=user&', 1000)
+}
+
 async function getUser(id) {
   return client.get(`/users/${id}`).then(response => response.data);
 }
@@ -90,6 +94,7 @@ module.exports = {
   getProject,
   getClient,
   getYear,
+  getAllTrackings,
   getUser,
   getTask,
 }
