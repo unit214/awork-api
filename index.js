@@ -8,7 +8,7 @@ dotenv.config();
 
 const apiKey = process.env.API_KEY;
 const client = axios.create({
-  baseURL: 'https://api.awork.io/api/v1',
+  baseURL: 'https://api.awork.com/api/v1',
   headers: {
     Authorization: `Bearer ${apiKey}`,
   },
