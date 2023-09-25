@@ -62,8 +62,9 @@ async function getHoursByProjectForMonthAndYear(project, month, year) {
   return getHoursByProjectForStartDateAndEndDate(project, startDate, endDate)
 }
 
-async function getHoursByProjectForStartDateAndEndDate(project, startDate, endDate) {
-  return iterateAPI(`/timeentries?filterby=startDateUtc ge datetime'${formatDate(startDate)}' and startDateUtc le datetime'${formatDate(endDate)}' and (projectId eq guid'${project}') and (isBillable eq true and isBilled eq false)&`)
+async function getHoursByProjectForStartDateAndEndDate(project, startDate, endDate, billableAndBilled = false) {
+  const billable = billableAndBilled ? 'isBillable eq true or isBilled eq true' : 'isBillable eq true and isBilled eq false';
+  return iterateAPI(`/timeentries?filterby=startDateUtc ge datetime'${formatDate(startDate)}' and startDateUtc le datetime'${formatDate(endDate)}' and (projectId eq guid'${project}') and (${billable})&`)
 }
 
 async function getHoursByProject(project) {
