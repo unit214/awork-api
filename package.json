@@ -21,11 +21,10 @@
   },
   "homepage": "https://github.com/unit214/awork-api#readme",
   "dependencies": {
+    "@types/node": "^20.11.19",
     "date-fns": "^2.29.1",
-    "dotenv": "^16.0.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.3.3",
-    "@types/node": "^20.11.19"
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.0.1",
