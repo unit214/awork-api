@@ -23,7 +23,8 @@
   "dependencies": {
     "date-fns": "^2.29.1",
     "dotenv": "^16.0.1",
-    "tslib": "^2.6.2"
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
@@ -31,7 +32,6 @@
     "@typescript-eslint/parser": "^7.0.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
+    "prettier": "^3.2.5"
   }
 }
