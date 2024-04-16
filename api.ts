@@ -6,6 +6,7 @@ export class AworkAPI {
   readonly #apiKey: string;
 
   constructor(apiKey: string) {
+    if (!apiKey) throw new Error('No Awork API Key provided');
     this.#apiKey = apiKey;
   }
 
