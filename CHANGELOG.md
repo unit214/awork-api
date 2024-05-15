@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/unit214/awork-api/compare/v1.1.0...v1.2.0) (2024-05-15)
+
+
+### Features
+
+* adds time entry post request ([50425ce](https://github.com/unit214/awork-api/commit/50425ce3cc908ea9c6985bf96c55e44a5f234ef5))
+
+
+### Bug Fixes
+
+* bug fixes to the project tasks endpoint ([b9c5d4d](https://github.com/unit214/awork-api/commit/b9c5d4d45af10452923bac7c36f7d98a0eb167a6))
+
 ## [1.1.0](https://github.com/unit214/awork-api/compare/v1.0.0...v1.1.0) (2024-05-15)
 
 
