@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/unit214/awork-api/compare/v1.0.0...v1.1.0) (2024-05-15)
+
+
+### Features
+
+* adds project task endpoint ([6105a03](https://github.com/unit214/awork-api/commit/6105a03905bf1039c55402cd48ba6546127c72b3))
+
 ## 1.0.0 (2024-04-16)
 
 
