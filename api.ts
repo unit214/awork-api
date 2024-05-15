@@ -124,8 +124,6 @@ export class AworkAPI {
   }
 
   async getProjectTasks(projectId: string): Promise<ProjectTask[]> {
-    return this.#fetchAwork(`/projects/${projectId}/projecttasks`).then(
-      (response) => response.json(),
-    );
+    return this.#iterateAPI(`/projects/${projectId}/projecttasks?`);
   }
 }
