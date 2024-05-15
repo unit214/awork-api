@@ -1,5 +1,13 @@
 import { endOfMonth, format, startOfMonth } from 'date-fns';
-import { Company, Project, ProjectTask, TimeEntry, User } from './models';
+import {
+  Company,
+  Project,
+  ProjectTask,
+  TimeEntry,
+  TimeEntryRequest,
+  TimeEntryResponse,
+  User,
+} from './models';
 
 //  API CALLS
 export class AworkAPI {
@@ -18,6 +26,18 @@ export class AworkAPI {
       headers: new Headers({
         Authorization: `Bearer ${this.#apiKey}`,
       }),
+    });
+  }
+
+  async #postAwork<T>(path: string, body: T): Promise<Response> {
+    const url = `https://api.awork.com/api/v1${path}`;
+    return fetch(url, {
+      method: 'POST',
+      headers: new Headers({
+        Authorization: `Bearer ${this.#apiKey}`,
+        ContentType: 'application/json',
+      }),
+      body: JSON.stringify(body),
     });
   }
 
@@ -125,5 +145,13 @@ export class AworkAPI {
 
   async getProjectTasks(projectId: string): Promise<ProjectTask[]> {
     return this.#iterateAPI(`/projects/${projectId}/projecttasks?`);
+  }
+
+  async createTimeEntry(
+    timeEntry: TimeEntryRequest,
+  ): Promise<TimeEntryResponse> {
+    return this.#postAwork<TimeEntryRequest>('/timeentries', timeEntry).then(
+      (response) => response.json(),
+    );
   }
 }

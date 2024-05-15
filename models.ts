@@ -329,3 +329,65 @@ export interface User {
   tags?: UserTag[];
   teams?: Team[];
 }
+
+export interface TimeEntryRequest {
+  isBillable?: boolean;
+  isBilled?: boolean;
+  taskId?: string;
+  projectId?: string;
+  note?: string;
+  startDateUtc?: string;
+  startTimeUtc?: string;
+  endTimeUtc?: string;
+  startDateLocal?: string;
+  startTimeLocal?: string;
+  endTimeLocal?: string;
+  timezone: string;
+  duration?: number;
+  breakDuration?: number;
+  typeOfWorkId: string;
+  userId: string;
+  endDateUtc?: string;
+  endDateLocal?: string;
+}
+
+export interface TimeEntryResponse {
+  isBillable: boolean;
+  isBilled: boolean;
+  taskId?: string;
+  projectId?: string;
+  note?: string;
+  startDateUtc?: string;
+  startTimeUtc?: string;
+  endTimeUtc?: string;
+  startDateLocal?: string;
+  startTimeLocal?: string;
+  endTimeLocal?: string;
+  timezone: string;
+  duration?: number;
+  breakDuration?: number;
+  typeOfWorkId: string;
+  userId: string;
+  id: string;
+  createdBy: string;
+  createdOn: string;
+  updatedBy: string;
+  updatedOn: string;
+  typeOfWork: {
+    id: string;
+    name: string;
+    icon: string;
+    isArchived: boolean;
+  };
+  user?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    hasImage: boolean;
+  };
+  task?: Task;
+  project?: SmallProject;
+  endDateUtc?: string;
+  endDateLocal?: string;
+  resourceVersion: number;
+}
