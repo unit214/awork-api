@@ -35,7 +35,7 @@ export class AworkAPI {
       method: 'POST',
       headers: new Headers({
         Authorization: `Bearer ${this.#apiKey}`,
-        ContentType: 'application/json',
+        'Content-Type': 'application/json',
       }),
       body: JSON.stringify(body),
     });
