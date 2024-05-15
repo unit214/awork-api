@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/unit214/awork-api/compare/v1.2.0...v1.2.1) (2024-05-15)
+
+
+### Bug Fixes
+
+* adjusts content type usage ([b89638b](https://github.com/unit214/awork-api/commit/b89638bf8bce84e39fe75402880c4e13d13fb86d))
+
 ## [1.2.0](https://github.com/unit214/awork-api/compare/v1.1.0...v1.2.0) (2024-05-15)
 
 
