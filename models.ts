@@ -153,6 +153,85 @@ interface ProjectMember {
   isDeactivated: boolean;
 }
 
+export interface ProjectTask {
+  name: string;
+  description?: string;
+  isPrio: boolean;
+  startOn?: string;
+  dueOn?: string;
+  laneOrder: number;
+  plannedDuration: number;
+  remainingDuration: number;
+  id: string;
+  isExternal: boolean;
+  baseType: string;
+  taskStatusId: string;
+  taskStatus: TaskStatus;
+  typeOfWorkId: string;
+  typeOfWork: {
+    id: string;
+    name: string;
+    icon: string;
+    isArchived: boolean;
+  };
+  assignees: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    hasImage: boolean;
+    plannedEffort: number;
+    isDistributedPlannedEffort: boolean;
+    updatedOn: string;
+    isExternal: boolean;
+  }[];
+  projectId: string;
+  project: SmallProject;
+  correlationId: string;
+  parentId: string;
+  parentTask: {
+    id: string;
+    name: string;
+    userId: string;
+    assigneeIds: string[];
+  };
+  isSubtask: boolean;
+  numberOfSubtasks: number;
+  hasAttachment: boolean;
+  lists: {
+    name: string;
+    order: number;
+    id: string;
+    isArchived: boolean;
+    createdOn: string;
+    createdBy: string;
+    updatedOn: string;
+    updatedBy: string;
+    orderOfTask: number;
+  }[];
+  userId: string;
+  tags: ProjectTag[];
+  createdOn: string;
+  createdBy: string;
+  updatedOn: string;
+  updatedBy: string;
+  closedOn: string;
+  closedBy: string;
+  order: number;
+  subtaskOrder: number;
+  createdFromTaskId: string;
+  isRecurring: boolean;
+  trackedDuration: number;
+  totalTrackedDuration: number;
+  totalPlannedDuration: number;
+  totalRemainingDuration: number;
+  resourceVersion: number;
+  checklistItemsDoneCount: number;
+  checklistItemsCount: number;
+  taskSchedulesCount: number;
+  isCompletelyScheduled: boolean;
+  commentCount: number;
+}
+
 export interface Project {
   name: string;
   isPrivate: boolean;

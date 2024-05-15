@@ -1,5 +1,5 @@
 import { endOfMonth, format, startOfMonth } from 'date-fns';
-import { Company, Project, TimeEntry, User } from './models';
+import { Company, Project, ProjectTask, TimeEntry, User } from './models';
 
 //  API CALLS
 export class AworkAPI {
@@ -121,5 +121,11 @@ export class AworkAPI {
 
   async getTask(id: string): Promise<User[]> {
     return this.#fetchAwork(`/tasks/${id}`).then((response) => response.json());
+  }
+
+  async getProjectTasks(projectId: string): Promise<ProjectTask[]> {
+    return this.#fetchAwork(`/projects/${projectId}/projecttasks`).then(
+      (response) => response.json(),
+    );
   }
 }
